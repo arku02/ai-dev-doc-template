@@ -1,0 +1,15 @@
+node_modules/
+.sandbox/
+.npm-cache/
+.workflow/lock
+**/.workflow/lock
+_local-backups/
+trials/
+.env
+.env.*
+!.env.example
+config.ini
+.venv/
+venv/
+__pycache__/
+*.pyc

@@ -1,0 +1,18 @@
+{
+  "name": "ai-dev-doc-template-lab",
+  "version": "0.2.0",
+  "private": true,
+  "type": "module",
+  "engines": { "node": ">=20.19.0" },
+  "scripts": {
+    "test": "node scripts/validate-lab.mjs",
+    "test:python": "node scripts/validate-python.mjs",
+    "test:onboarding": "node scripts/validate-onboarding.mjs",
+    "test:clean": "node scripts/validate-clean.mjs",
+    "onboard": "node scripts/onboard.mjs",
+    "demo:test": "node --test examples/order-lookup/test/*.test.mjs",
+    "demo:replay": "node scripts/replay.mjs",
+    "starter:init": "node scripts/init-project.mjs"
+  },
+  "devDependencies": { "@fission-ai/openspec": "1.13.1" }
+}

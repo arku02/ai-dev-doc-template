@@ -1,0 +1,19 @@
+{
+  "executedAt": "2026-09-18T15:25:59.174Z",
+  "exitCode": 0,
+  "error": null,
+  "command": [
+    "C:\\Program Files\\nodejs\\node.exe",
+    "--test",
+    "--test-reporter=tap",
+    "tests/onboarding.test.mjs"
+  ],
+  "tests": 18,
+  "failures": 0,
+  "inputHashes": {
+    "scripts/onboard.mjs": "906fbde7b8ad8d2a8a88ddfc70ce6206b4ab77ca28b3ed5bfbced973ef02879d",
+    "tests/onboarding.test.mjs": "3112cc218a97e6deb694a8d4db4fe3d2e285dea22c7999620afa7f15f490a6a9",
+    "starter/scripts/workflow.mjs": "b9b365e92071579ba799a0e907e48fbf8037fbeb5de0a660c06554680879417f",
+    "starter/scripts/doctor.mjs": "032cb64c9448dbb184a7d1641f17ea8ded7ca980da3622328043228edf996a69"
+  }
+}

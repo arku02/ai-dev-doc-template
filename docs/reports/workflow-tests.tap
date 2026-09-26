@@ -1,0 +1,126 @@
+TAP version 13
+# Evidence retained at <WORKSPACE>\\.sandbox\\gates-QCtToS\\project
+# Subtest: Integrated workflow: real CLI plus failure and delivery paths
+    # Subtest: OpenSpec sees the custom review dependency before authoring
+    ok 1 - OpenSpec sees the custom review dependency before authoring
+      ---
+      duration_ms: 464.4848
+      type: 'test'
+      ...
+    # Subtest: a valid reviewed change is ready
+    ok 2 - a valid reviewed change is ready
+      ---
+      duration_ms: 987.1799
+      type: 'test'
+      ...
+    # Subtest: missing verification cannot archive
+    ok 3 - missing verification cannot archive
+      ---
+      duration_ms: 944.185
+      type: 'test'
+      ...
+    # Subtest: unresolved questions block implementation check
+    ok 4 - unresolved questions block implementation check
+      ---
+      duration_ms: 16.2973
+      type: 'test'
+      ...
+    # Subtest: uncovered requirements block the gate
+    ok 5 - uncovered requirements block the gate
+      ---
+      duration_ms: 23.985
+      type: 'test'
+      ...
+    # Subtest: unfinished tasks cannot be verified
+    ok 6 - unfinished tasks cannot be verified
+      ---
+      duration_ms: 20.6087
+      type: 'test'
+      ...
+    # Subtest: real failing test invalidates success and leaves baseline untouched
+    ok 7 - real failing test invalidates success and leaves baseline untouched
+      ---
+      duration_ms: 3892.5658
+      type: 'test'
+      ...
+    # Subtest: an empty suite cannot create passing evidence
+    ok 8 - an empty suite cannot create passing evidence
+      ---
+      duration_ms: 1138.6733
+      type: 'test'
+      ...
+    # Subtest: skipped tests cannot create passing evidence
+    ok 9 - skipped tests cannot create passing evidence
+      ---
+      duration_ms: 1362.5327
+      type: 'test'
+      ...
+    # Subtest: changing specs after verification makes evidence stale
+    ok 10 - changing specs after verification makes evidence stale
+      ---
+      duration_ms: 2762.0885
+      type: 'test'
+      ...
+    # Subtest: changing implementation after verification makes evidence stale
+    ok 11 - changing implementation after verification makes evidence stale
+      ---
+      duration_ms: 1114.9234
+      type: 'test'
+      ...
+    # Subtest: altered test evidence cannot be used for archive
+    ok 12 - altered test evidence cannot be used for archive
+      ---
+      duration_ms: 1037.1082
+      type: 'test'
+      ...
+    # Subtest: another active change to the same requirement blocks archive
+    ok 13 - another active change to the same requirement blocks archive
+      ---
+      duration_ms: 529.0429
+      type: 'test'
+      ...
+    # Subtest: verified full change archives through OpenSpec and creates a main spec
+    ok 14 - verified full change archives through OpenSpec and creates a main spec
+      ---
+      duration_ms: 3779.7771
+      type: 'test'
+      ...
+    # Subtest: baseline changes require rebase and a fresh substantive review
+    ok 15 - baseline changes require rebase and a fresh substantive review
+      ---
+      duration_ms: 975.4857
+      type: 'test'
+      ...
+    # Subtest: lite change keeps prior requirements, verifies and archives
+    ok 16 - lite change keeps prior requirements, verifies and archives
+      ---
+      duration_ms: 4355.4043
+      type: 'test'
+      ...
+    # Subtest: path traversal and accidental overwrite are refused
+    ok 17 - path traversal and accidental overwrite are refused
+      ---
+      duration_ms: 0.5491
+      type: 'test'
+      ...
+    # Subtest: invalid synchronized main spec cannot produce a success receipt
+    ok 18 - invalid synchronized main spec cannot produce a success receipt
+      ---
+      duration_ms: 5359.4924
+      type: 'test'
+      ...
+    1..18
+ok 1 - Integrated workflow: real CLI plus failure and delivery paths
+  ---
+  duration_ms: 34861.562
+  type: 'test'
+  ...
+1..1
+# tests 19
+# suites 0
+# pass 19
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 35010.6646

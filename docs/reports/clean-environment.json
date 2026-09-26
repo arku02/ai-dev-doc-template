@@ -1,0 +1,479 @@
+{
+  "startedAt": "2026-09-18T15:28:09.539Z",
+  "node": "v24.18.0",
+  "root": "<WORKSPACE>\\.sandbox\\clean-pT0hW4",
+  "steps": [
+    {
+      "label": "install-local-tools",
+      "cwd": "<WORKSPACE>\\.sandbox\\clean-pT0hW4\\fresh-node",
+      "command": [
+        "C:\\Program Files\\nodejs\\node.exe",
+        "C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js",
+        "ci",
+        "--offline",
+        "--ignore-scripts",
+        "--no-audit",
+        "--no-fund",
+        "--cache",
+        "<WORKSPACE>\\.npm-cache"
+      ],
+      "exitCode": 0,
+      "error": null,
+      "log": "<WORKSPACE>\\.sandbox\\clean-pT0hW4\\1-install-local-tools.log"
+    },
+    {
+      "label": "doctor-fresh-node",
+      "cwd": "<WORKSPACE>\\.sandbox\\clean-pT0hW4\\fresh-node",
+      "command": [
+        "C:\\Program Files\\nodejs\\node.exe",
+        "scripts/doctor.mjs"
+      ],
+      "exitCode": 0,
+      "error": null,
+      "log": "<WORKSPACE>\\.sandbox\\clean-pT0hW4\\2-doctor-fresh-node.log"
+    },
+    {
+      "label": "new-add-order-lookup",
+      "cwd": "<WORKSPACE>\\.sandbox\\clean-pT0hW4\\fresh-node",
+      "command": [
+        "C:\\Program Files\\nodejs\\node.exe",
+        "scripts/workflow.mjs",
+        "new",
+        "add-order-lookup"
+      ],
+      "exitCode": 0,
+      "error": null,
+      "log": "<WORKSPACE>\\.sandbox\\clean-pT0hW4\\3-new-add-order-lookup.log"
+    },
+    {
+      "label": "check-add-order-lookup",
+      "cwd": "<WORKSPACE>\\.sandbox\\clean-pT0hW4\\fresh-node",
+      "command": [
+        "C:\\Program Files\\nodejs\\node.exe",
+        "scripts/workflow.mjs",
+        "check",
+        "add-order-lookup"
+      ],
+      "exitCode": 0,
+      "error": null,
+      "log": "<WORKSPACE>\\.sandbox\\clean-pT0hW4\\4-check-add-order-lookup.log"
+    },
+    {
+      "label": "verify-add-order-lookup",
+      "cwd": "<WORKSPACE>\\.sandbox\\clean-pT0hW4\\fresh-node",
+      "command": [
+        "C:\\Program Files\\nodejs\\node.exe",
+        "scripts/workflow.mjs",
+        "verify",
+        "add-order-lookup"
+      ],
+      "exitCode": 0,
+      "error": null,
+      "log": "<WORKSPACE>\\.sandbox\\clean-pT0hW4\\5-verify-add-order-lookup.log"
+    },
+    {
+      "label": "archive-add-order-lookup",
+      "cwd": "<WORKSPACE>\\.sandbox\\clean-pT0hW4\\fresh-node",
+      "command": [
+        "C:\\Program Files\\nodejs\\node.exe",
+        "scripts/workflow.mjs",
+        "archive",
+        "add-order-lookup"
+      ],
+      "exitCode": 0,
+      "error": null,
+      "log": "<WORKSPACE>\\.sandbox\\clean-pT0hW4\\6-archive-add-order-lookup.log"
+    },
+    {
+      "label": "plan-existing-node",
+      "cwd": "<WORKSPACE>",
+      "command": [
+        "C:\\Program Files\\nodejs\\node.exe",
+        "scripts/onboard.mjs",
+        "plan",
+        "--target",
+        "<WORKSPACE>\\.sandbox\\clean-pT0hW4\\existing-node",
+        "--runner",
+        "node",
+        "--test",
+        "test/order.test.mjs",
+        "--out",
+        "<WORKSPACE>\\.sandbox\\clean-pT0hW4\\existing-node-plan.json"
+      ],
+      "exitCode": 0,
+      "error": null,
+      "log": "<WORKSPACE>\\.sandbox\\clean-pT0hW4\\7-plan-existing-node.log"
+    },
+    {
+      "label": "apply-existing-node",
+      "cwd": "<WORKSPACE>",
+      "command": [
+        "C:\\Program Files\\nodejs\\node.exe",
+        "scripts/onboard.mjs",
+        "apply",
+        "<WORKSPACE>\\.sandbox\\clean-pT0hW4\\existing-node-plan.json"
+      ],
+      "exitCode": 0,
+      "error": null,
+      "log": "<WORKSPACE>\\.sandbox\\clean-pT0hW4\\8-apply-existing-node.log"
+    },
+    {
+      "label": "install-local-tools",
+      "cwd": "<WORKSPACE>\\.sandbox\\clean-pT0hW4\\existing-node\\.integration",
+      "command": [
+        "C:\\Program Files\\nodejs\\node.exe",
+        "C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js",
+        "ci",
+        "--offline",
+        "--ignore-scripts",
+        "--no-audit",
+        "--no-fund",
+        "--cache",
+        "<WORKSPACE>\\.npm-cache"
+      ],
+      "exitCode": 0,
+      "error": null,
+      "log": "<WORKSPACE>\\.sandbox\\clean-pT0hW4\\9-install-local-tools.log"
+    },
+    {
+      "label": "doctor-existing-node",
+      "cwd": "<WORKSPACE>\\.sandbox\\clean-pT0hW4\\existing-node",
+      "command": [
+        "C:\\Program Files\\nodejs\\node.exe",
+        ".integration/scripts/doctor.mjs"
+      ],
+      "exitCode": 0,
+      "error": null,
+      "log": "<WORKSPACE>\\.sandbox\\clean-pT0hW4\\10-doctor-existing-node.log"
+    },
+    {
+      "label": "new-add-order-lookup",
+      "cwd": "<WORKSPACE>\\.sandbox\\clean-pT0hW4\\existing-node",
+      "command": [
+        "C:\\Program Files\\nodejs\\node.exe",
+        ".integration/scripts/workflow.mjs",
+        "new",
+        "add-order-lookup"
+      ],
+      "exitCode": 0,
+      "error": null,
+      "log": "<WORKSPACE>\\.sandbox\\clean-pT0hW4\\11-new-add-order-lookup.log"
+    },
+    {
+      "label": "check-add-order-lookup",
+      "cwd": "<WORKSPACE>\\.sandbox\\clean-pT0hW4\\existing-node",
+      "command": [
+        "C:\\Program Files\\nodejs\\node.exe",
+        ".integration/scripts/workflow.mjs",
+        "check",
+        "add-order-lookup"
+      ],
+      "exitCode": 0,
+      "error": null,
+      "log": "<WORKSPACE>\\.sandbox\\clean-pT0hW4\\12-check-add-order-lookup.log"
+    },
+    {
+      "label": "verify-add-order-lookup",
+      "cwd": "<WORKSPACE>\\.sandbox\\clean-pT0hW4\\existing-node",
+      "command": [
+        "C:\\Program Files\\nodejs\\node.exe",
+        ".integration/scripts/workflow.mjs",
+        "verify",
+        "add-order-lookup"
+      ],
+      "exitCode": 0,
+      "error": null,
+      "log": "<WORKSPACE>\\.sandbox\\clean-pT0hW4\\13-verify-add-order-lookup.log"
+    },
+    {
+      "label": "archive-add-order-lookup",
+      "cwd": "<WORKSPACE>\\.sandbox\\clean-pT0hW4\\existing-node",
+      "command": [
+        "C:\\Program Files\\nodejs\\node.exe",
+        ".integration/scripts/workflow.mjs",
+        "archive",
+        "add-order-lookup"
+      ],
+      "exitCode": 0,
+      "error": null,
+      "log": "<WORKSPACE>\\.sandbox\\clean-pT0hW4\\14-archive-add-order-lookup.log"
+    },
+    {
+      "label": "create-empty-venv",
+      "cwd": "<WORKSPACE>\\.sandbox\\clean-pT0hW4\\existing-python",
+      "command": [
+        "<USER_HOME>\\AppData\\Local\\Programs\\Python\\Python313\\python.exe",
+        "-I",
+        "-B",
+        "-m",
+        "venv",
+        "--without-pip",
+        ".venv"
+      ],
+      "exitCode": 0,
+      "error": null,
+      "log": "<WORKSPACE>\\.sandbox\\clean-pT0hW4\\15-create-empty-venv.log"
+    },
+    {
+      "label": "verify-venv-isolation",
+      "cwd": "<WORKSPACE>\\.sandbox\\clean-pT0hW4\\existing-python",
+      "command": [
+        "<WORKSPACE>\\.sandbox\\clean-pT0hW4\\existing-python\\.venv\\Scripts\\python.exe",
+        "-I",
+        "-B",
+        "-c",
+        "import sys,importlib.util; assert sys.prefix != sys.base_prefix; assert importlib.util.find_spec(\"requests\") is None; assert importlib.util.find_spec(\"pymysql\") is None; print(sys.version)"
+      ],
+      "exitCode": 0,
+      "error": null,
+      "log": "<WORKSPACE>\\.sandbox\\clean-pT0hW4\\16-verify-venv-isolation.log"
+    },
+    {
+      "label": "plan-existing-python",
+      "cwd": "<WORKSPACE>",
+      "command": [
+        "C:\\Program Files\\nodejs\\node.exe",
+        "scripts/onboard.mjs",
+        "plan",
+        "--target",
+        "<WORKSPACE>\\.sandbox\\clean-pT0hW4\\existing-python",
+        "--runner",
+        "python-unittest",
+        "--test",
+        "tests/test_formatter.py",
+        "--out",
+        "<WORKSPACE>\\.sandbox\\clean-pT0hW4\\existing-python-plan.json",
+        "--python",
+        ".venv/Scripts/python.exe"
+      ],
+      "exitCode": 0,
+      "error": null,
+      "log": "<WORKSPACE>\\.sandbox\\clean-pT0hW4\\17-plan-existing-python.log"
+    },
+    {
+      "label": "apply-existing-python",
+      "cwd": "<WORKSPACE>",
+      "command": [
+        "C:\\Program Files\\nodejs\\node.exe",
+        "scripts/onboard.mjs",
+        "apply",
+        "<WORKSPACE>\\.sandbox\\clean-pT0hW4\\existing-python-plan.json"
+      ],
+      "exitCode": 0,
+      "error": null,
+      "log": "<WORKSPACE>\\.sandbox\\clean-pT0hW4\\18-apply-existing-python.log"
+    },
+    {
+      "label": "install-local-tools",
+      "cwd": "<WORKSPACE>\\.sandbox\\clean-pT0hW4\\existing-python\\.integration",
+      "command": [
+        "C:\\Program Files\\nodejs\\node.exe",
+        "C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js",
+        "ci",
+        "--offline",
+        "--ignore-scripts",
+        "--no-audit",
+        "--no-fund",
+        "--cache",
+        "<WORKSPACE>\\.npm-cache"
+      ],
+      "exitCode": 0,
+      "error": null,
+      "log": "<WORKSPACE>\\.sandbox\\clean-pT0hW4\\19-install-local-tools.log"
+    },
+    {
+      "label": "doctor-existing-python",
+      "cwd": "<WORKSPACE>\\.sandbox\\clean-pT0hW4\\existing-python",
+      "command": [
+        "C:\\Program Files\\nodejs\\node.exe",
+        ".integration/scripts/doctor.mjs"
+      ],
+      "exitCode": 0,
+      "error": null,
+      "log": "<WORKSPACE>\\.sandbox\\clean-pT0hW4\\20-doctor-existing-python.log"
+    },
+    {
+      "label": "new-normalize-label",
+      "cwd": "<WORKSPACE>\\.sandbox\\clean-pT0hW4\\existing-python",
+      "command": [
+        "C:\\Program Files\\nodejs\\node.exe",
+        ".integration/scripts/workflow.mjs",
+        "new",
+        "normalize-label"
+      ],
+      "exitCode": 0,
+      "error": null,
+      "log": "<WORKSPACE>\\.sandbox\\clean-pT0hW4\\21-new-normalize-label.log"
+    },
+    {
+      "label": "check-normalize-label",
+      "cwd": "<WORKSPACE>\\.sandbox\\clean-pT0hW4\\existing-python",
+      "command": [
+        "C:\\Program Files\\nodejs\\node.exe",
+        ".integration/scripts/workflow.mjs",
+        "check",
+        "normalize-label"
+      ],
+      "exitCode": 0,
+      "error": null,
+      "log": "<WORKSPACE>\\.sandbox\\clean-pT0hW4\\22-check-normalize-label.log"
+    },
+    {
+      "label": "verify-normalize-label",
+      "cwd": "<WORKSPACE>\\.sandbox\\clean-pT0hW4\\existing-python",
+      "command": [
+        "C:\\Program Files\\nodejs\\node.exe",
+        ".integration/scripts/workflow.mjs",
+        "verify",
+        "normalize-label"
+      ],
+      "exitCode": 0,
+      "error": null,
+      "log": "<WORKSPACE>\\.sandbox\\clean-pT0hW4\\23-verify-normalize-label.log"
+    },
+    {
+      "label": "archive-normalize-label",
+      "cwd": "<WORKSPACE>\\.sandbox\\clean-pT0hW4\\existing-python",
+      "command": [
+        "C:\\Program Files\\nodejs\\node.exe",
+        ".integration/scripts/workflow.mjs",
+        "archive",
+        "normalize-label"
+      ],
+      "exitCode": 0,
+      "error": null,
+      "log": "<WORKSPACE>\\.sandbox\\clean-pT0hW4\\24-archive-normalize-label.log"
+    },
+    {
+      "label": "new-lowercase-label",
+      "cwd": "<WORKSPACE>\\.sandbox\\clean-pT0hW4\\existing-python",
+      "command": [
+        "C:\\Program Files\\nodejs\\node.exe",
+        ".integration/scripts/workflow.mjs",
+        "new",
+        "lowercase-label"
+      ],
+      "exitCode": 0,
+      "error": null,
+      "log": "<WORKSPACE>\\.sandbox\\clean-pT0hW4\\25-new-lowercase-label.log"
+    },
+    {
+      "label": "check-lowercase-label",
+      "cwd": "<WORKSPACE>\\.sandbox\\clean-pT0hW4\\existing-python",
+      "command": [
+        "C:\\Program Files\\nodejs\\node.exe",
+        ".integration/scripts/workflow.mjs",
+        "check",
+        "lowercase-label"
+      ],
+      "exitCode": 0,
+      "error": null,
+      "log": "<WORKSPACE>\\.sandbox\\clean-pT0hW4\\26-check-lowercase-label.log"
+    },
+    {
+      "label": "verify-lowercase-label",
+      "cwd": "<WORKSPACE>\\.sandbox\\clean-pT0hW4\\existing-python",
+      "command": [
+        "C:\\Program Files\\nodejs\\node.exe",
+        ".integration/scripts/workflow.mjs",
+        "verify",
+        "lowercase-label"
+      ],
+      "exitCode": 0,
+      "error": null,
+      "log": "<WORKSPACE>\\.sandbox\\clean-pT0hW4\\27-verify-lowercase-label.log"
+    },
+    {
+      "label": "archive-lowercase-label",
+      "cwd": "<WORKSPACE>\\.sandbox\\clean-pT0hW4\\existing-python",
+      "command": [
+        "C:\\Program Files\\nodejs\\node.exe",
+        ".integration/scripts/workflow.mjs",
+        "archive",
+        "lowercase-label"
+      ],
+      "exitCode": 0,
+      "error": null,
+      "log": "<WORKSPACE>\\.sandbox\\clean-pT0hW4\\28-archive-lowercase-label.log"
+    },
+    {
+      "label": "documented-test-entry",
+      "cwd": "<WORKSPACE>\\.sandbox\\clean-pT0hW4\\existing-python",
+      "command": [
+        "C:\\Program Files\\nodejs\\node.exe",
+        ".integration/scripts/run-tests.mjs"
+      ],
+      "exitCode": 0,
+      "error": null,
+      "log": "<WORKSPACE>\\.sandbox\\clean-pT0hW4\\29-documented-test-entry.log"
+    }
+  ],
+  "passed": true,
+  "fresh-nodeEnvironment": {
+    "root": "<WORKSPACE>\\.sandbox\\clean-pT0hW4\\fresh-node",
+    "node": "v24.18.0",
+    "ready": true,
+    "issues": [],
+    "testRunner": "node",
+    "openspec": "1.13.1",
+    "tests": [
+      {
+        "file": "test/order.test.mjs",
+        "exists": true
+      }
+    ],
+    "note": "Environment check only; run tests and workflow verify before delivery."
+  },
+  "existing-nodeEnvironment": {
+    "root": "<WORKSPACE>\\.sandbox\\clean-pT0hW4\\existing-node",
+    "node": "v24.18.0",
+    "ready": true,
+    "issues": [],
+    "testRunner": "node",
+    "openspec": "1.13.1",
+    "tests": [
+      {
+        "file": "test/order.test.mjs",
+        "exists": true
+      }
+    ],
+    "note": "Environment check only; run tests and workflow verify before delivery."
+  },
+  "existingApplicationPreserved": true,
+  "existing-pythonEnvironment": {
+    "root": "<WORKSPACE>\\.sandbox\\clean-pT0hW4\\existing-python",
+    "node": "v24.18.0",
+    "ready": true,
+    "issues": [],
+    "testRunner": "python-unittest",
+    "openspec": "1.13.1",
+    "tests": [
+      {
+        "file": "tests/test_formatter.py",
+        "exists": true
+      }
+    ],
+    "python": {
+      "version": [
+        3,
+        13,
+        7
+      ],
+      "executable": "<WORKSPACE>\\.sandbox\\clean-pT0hW4\\existing-python\\.venv\\Scripts\\python.exe",
+      "virtualenv": true,
+      "prefix": "<WORKSPACE>\\.sandbox\\clean-pT0hW4\\existing-python\\.venv"
+    },
+    "note": "Environment check only; run tests and workflow verify before delivery."
+  },
+  "pythonStandardLibraryOnly": true,
+  "completedChanges": 4,
+  "finishedAt": "2026-09-18T15:29:11.046Z",
+  "inputHashes": {
+    "scripts/onboard.mjs": "906fbde7b8ad8d2a8a88ddfc70ce6206b4ab77ca28b3ed5bfbced973ef02879d",
+    "scripts/validate-clean.mjs": "aa1ec1a91f86e1b48fc5756e5fc7d6b870542ef728854c2de129ac61ca0ead5c",
+    "starter/scripts/workflow.mjs": "b9b365e92071579ba799a0e907e48fbf8037fbeb5de0a660c06554680879417f",
+    "starter/scripts/doctor.mjs": "032cb64c9448dbb184a7d1641f17ea8ded7ca980da3622328043228edf996a69",
+    "starter/scripts/unittest_runner.py": "bdae274ddf0869ec5524a08fa846ccc2004124cfd2197171d866094556736b75",
+    "starter/package-lock.json": "3a27b8fe89586cf91199ba88490630884c2cd350dbe82cb29a562eb6f5e0aec0"
+  }
+}

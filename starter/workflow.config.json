@@ -1,0 +1,8 @@
+{
+  "schema": "integrated",
+  "openspecVersion": "1.13.1",
+  "testFiles": [
+    "test/example.test.mjs"
+  ]
+}
+

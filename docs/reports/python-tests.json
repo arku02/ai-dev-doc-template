@@ -1,0 +1,18 @@
+{
+  "executedAt": "2026-09-18T15:31:52.579Z",
+  "command": [
+    "C:\\Program Files\\nodejs\\node.exe",
+    "--test",
+    "--test-reporter=tap",
+    "tests/python-runner.test.mjs"
+  ],
+  "exitCode": 0,
+  "error": null,
+  "tests": 13,
+  "failures": 0,
+  "inputHashes": {
+    "starter/scripts/workflow.mjs": "b9b365e92071579ba799a0e907e48fbf8037fbeb5de0a660c06554680879417f",
+    "starter/scripts/unittest_runner.py": "bdae274ddf0869ec5524a08fa846ccc2004124cfd2197171d866094556736b75",
+    "tests/python-runner.test.mjs": "0ae59f0d32126ef1ba9f7e0b0cf912d0291be77ca288f6a4d78db7935d668339"
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "change": "add-order-lookup",
+  "archivedAt": "2026-09-18T02:12:23.131Z",
+  "archive": "openspec/changes/archive/2026-09-18-add-order-lookup",
+  "verifiedDigest": "491eec7f55b691fadb733e7528f97ba298917de7cc2bb9aa75735ef33c97f070",
+  "specs": {
+    "openspec/specs/.gitkeep": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "openspec/specs/order-lookup/spec.md": "6329ac875b3d8a204757ec7cdd43974fddf53904dc33c8a8b51c66046d62d375"
+  },
+  "output": "{\n  \"archive\": {\n    \"change\": \"add-order-lookup\",\n    \"archivedAs\": \"2026-09-18-add-order-lookup\",\n    \"path\": \"<WORKSPACE>\\\\examples\\\\order-lookup\\\\openspec\\\\changes\\\\archive\\\\2026-09-18-add-order-lookup\",\n    \"specsUpdated\": true,\n    \"totals\": {\n      \"added\": 4,\n      \"modified\": 0,\n      \"removed\": 0,\n      \"renamed\": 0\n    }\n  },\n  \"root\": {\n    \"path\": \"<WORKSPACE>\\\\examples\\\\order-lookup\",\n    \"source\": \"nearest\"\n  }\n}\n"
+}

@@ -1,0 +1,23 @@
+{
+  "executedAt": "2026-09-18T15:32:11.327Z",
+  "node": "v24.18.0",
+  "openspec": "1.13.1",
+  "exitCode": 0,
+  "error": null,
+  "command": [
+    "node",
+    "--test",
+    "--test-reporter=tap",
+    "--test-concurrency=1",
+    "tests/workflow.test.mjs"
+  ],
+  "tests": 19,
+  "failures": 0,
+  "inputHashes": {
+    "starter/scripts/workflow.mjs": "b9b365e92071579ba799a0e907e48fbf8037fbeb5de0a660c06554680879417f",
+    "tests/workflow.test.mjs": "68fc4b8974b7ec9ebae142c39a30eae01eac5f6709f258ca51990e4d8a6e0535",
+    "scripts/init-project.mjs": "f29930d83eb44029d202ce2311502e8d8b902caeef0a607d4aca4dc1c1b954df",
+    "scripts/demo-fixtures.mjs": "98963005fc9b6fb2c2f4b9c225c321e7f0fd766c18d51c62e7a737e8dec85197",
+    "package-lock.json": "8fc776307159c0cc673147daa9d016821d864db3d608956f3a660c287b3c90b0"
+  }
+}

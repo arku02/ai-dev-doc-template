@@ -1,0 +1,64 @@
+{
+  "change": "add-order-lookup",
+  "passed": true,
+  "finishedAt": "2026-09-18T02:12:22.753Z",
+  "node": "v24.18.0",
+  "openspec": "1.13.1",
+  "command": [
+    "C:\\Program Files\\nodejs\\node.exe",
+    "--test",
+    "--test-reporter=tap",
+    "test/order.test.mjs"
+  ],
+  "exitCode": 0,
+  "error": null,
+  "tests": 10,
+  "executedIds": [
+    "R1",
+    "R2",
+    "R3",
+    "R4"
+  ],
+  "summary": {
+    "mode": "full",
+    "tasks": 4,
+    "requirements": 4,
+    "requiredTestIds": [
+      "R1",
+      "R2",
+      "R3",
+      "R4"
+    ]
+  },
+  "digest": "491eec7f55b691fadb733e7528f97ba298917de7cc2bb9aa75735ef33c97f070",
+  "manifest": {
+    ".gitignore": "99b9ee5792e395f2c7a29ea72e9eab44f469630672361ad336abc61eadb018f9",
+    "CHANGELOG.md": "242f3f11414885cc1e10a336ac537a8bc3fdf05f2778c7a5054baf39e7703d20",
+    "PROJECT-RULES.md": "0682d51d886792b4d9a9d892c1fdd93f4b349b879b5e0dfda17ebd7b7d35e730",
+    "README.md": "98301818468f697db4fe7905013a92ea3f4718d7b8fd99cefde53cdbc2b80baa",
+    "docs/ARCHITECTURE.md": "13f4c6d969ec6b40aa158553b955d29f9d7c3e1cc0a17cbd3eee0aaaea078e6a",
+    "docs/adr/0001-local-fixtures.md": "2e8a4b7ce3ccdfa10444801b1c859ff8f3e8894214c9194fa83d437955e38d8e",
+    "openspec/changes/add-order-lookup/.openspec.yaml": "1154f6e776feec13f518f3295fe804558c906b35f23b1aa6e2cb31cbb31f4901",
+    "openspec/changes/add-order-lookup/design.md": "0eeedb67bd650b8e8daba7be98fcf68b73a4dfa4622780bbbc70578bb3bf4000",
+    "openspec/changes/add-order-lookup/proposal.md": "8cac11823889ff58a3f1a1b75e6598403c577c3996250f526fddc93183dceddc",
+    "openspec/changes/add-order-lookup/review.md": "3121150c57d1bbf6b0823e5f3288cb53e279e73efaaa8463cba1de4e4c204c9b",
+    "openspec/changes/add-order-lookup/specs/order-lookup/spec.md": "7b14b0c0da7f34b84abb23f8fc0e5350ed4b7bb8d7f86e2cd556ab48e8df6509",
+    "openspec/changes/add-order-lookup/tasks.md": "6b32ef1d432656e33ecf33da4d52a163ffdda44f378ab248cb547962e5695eae",
+    "openspec/config.yaml": "905c5324771f623bfe97771c7bf0e58a0d2a4bc920297cf593a72fd1407868d5",
+    "openspec/schemas/integrated/schema.yaml": "632d52d9766f4fed074bb9571e6e38d2188ab5825a7fae33ee3714910fc472d4",
+    "openspec/schemas/integrated/templates/design.md": "6dcda53d518dcdb7ceeb221d9351f5e6001d02046c51521e1c8c9341ceae3ad9",
+    "openspec/schemas/integrated/templates/proposal.md": "35f4b07b219b0ab63c32d2e54314a7b5d649c3aa306ed07c85bc5f998bc01335",
+    "openspec/schemas/integrated/templates/review.md": "ed2af5507baf179126bd4803fe59f50b7f9a4bc84bd8021dc60d3536fd332a45",
+    "openspec/schemas/integrated/templates/spec.md": "16b378f5b439b762bcb1fa3279f3082478033f4251ae6f300597d60ed2e9b63f",
+    "openspec/schemas/integrated/templates/tasks.md": "c350d4972b0ac7741b385f8f4d7b6cb15c8bc9da204e9d552427f5f65573841f",
+    "openspec/specs/.gitkeep": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "package-lock.json": "e1f31f1640b694078f33af66c49035ef357f4e64d3e9fb9718c3e1df9420c1f4",
+    "package.json": "657a27177a94b13b48a9b6e145a2a27a99f6dd813af34823b4a924e9a17bb32f",
+    "scripts/workflow.mjs": "0791941f1dea796d493718197ccc3dc52e4f49485ac90f5084f46a7a2807c289",
+    "src/orders.mjs": "e1426a2d4120123877f20910c1614afcb86656d70deb9c9c9867498f87eafe82",
+    "test/order.test.mjs": "df40ef20e3fd11e661b2ba1ea3a3e12e14e0cf7e9e323be7e125ba40265a651b",
+    "workflow.config.json": "fbe307970d0e6c130dc2b6940c7de42e68a3c3861e314ff4675267ce20eb65c5"
+  },
+  "log": ".workflow/evidence/add-order-lookup.tap",
+  "logHash": "1184d236d7efcb8d32eebb4ba5c534baa5de77cf238fff1e03bd365f35d0e5a2"
+}

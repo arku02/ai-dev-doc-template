@@ -1,0 +1,120 @@
+TAP version 13
+# Onboarding evidence: <WORKSPACE>\\.sandbox\\onboarding-TSb9O5
+# Subtest: Reusable onboarding, conflicts and recovery
+    # Subtest: new project plan does not create the target
+    ok 1 - new project plan does not create the target
+      ---
+      duration_ms: 141.1917
+      type: 'test'
+      ...
+    # Subtest: existing application files and package configuration are preserved
+    ok 2 - existing application files and package configuration are preserved
+      ---
+      duration_ms: 107.1412
+      type: 'test'
+      ...
+    # Subtest: collision openspec is refused without edits
+    ok 3 - collision openspec is refused without edits
+      ---
+      duration_ms: 7.3666
+      type: 'test'
+      ...
+    # Subtest: collision .integration is refused without edits
+    ok 4 - collision .integration is refused without edits
+      ---
+      duration_ms: 6.3959
+      type: 'test'
+      ...
+    # Subtest: collision workflow.config.json is refused without edits
+    ok 5 - collision workflow.config.json is refused without edits
+      ---
+      duration_ms: 5.8146
+      type: 'test'
+      ...
+    # Subtest: changed target invalidates the review plan before writes
+    ok 6 - changed target invalidates the review plan before writes
+      ---
+      duration_ms: 29.4397
+      type: 'test'
+      ...
+    # Subtest: edited plan is refused
+    ok 7 - edited plan is refused
+      ---
+      duration_ms: 18.1521
+      type: 'test'
+      ...
+    # Subtest: second application cannot overwrite installed files
+    ok 8 - second application cannot overwrite installed files
+      ---
+      duration_ms: 88.0576
+      type: 'test'
+      ...
+    # Subtest: rollback restores original bytes and removes only imported files
+    ok 9 - rollback restores original bytes and removes only imported files
+      ---
+      duration_ms: 111.1772
+      type: 'test'
+      ...
+    # Subtest: edited imported file blocks the entire rollback
+    ok 10 - edited imported file blocks the entire rollback
+      ---
+      duration_ms: 82.8392
+      type: 'test'
+      ...
+    # Subtest: changed backup blocks rollback before removing files
+    ok 11 - changed backup blocks rollback before removing files
+      ---
+      duration_ms: 101.2567
+      type: 'test'
+      ...
+    # Subtest: workflow work prevents automatic rollback
+    ok 12 - workflow work prevents automatic rollback
+      ---
+      duration_ms: 91.5785
+      type: 'test'
+      ...
+    # Subtest: interrupted import can restore completed writes
+    ok 13 - interrupted import can restore completed writes
+      ---
+      duration_ms: 143.179
+      type: 'test'
+      ...
+    # Subtest: linked target is refused
+    ok 14 - linked target is refused
+      ---
+      duration_ms: 3.2794
+      type: 'test'
+      ...
+    # Subtest: linked ignore file is refused before reading it
+    ok 15 - linked ignore file is refused before reading it
+      ---
+      duration_ms: 7.0311
+      type: 'test'
+      ...
+    # Subtest: doctor refuses missing isolated dependencies despite parent installation
+    ok 16 - doctor refuses missing isolated dependencies despite parent installation
+      ---
+      duration_ms: 101.6713
+      type: 'test'
+      ...
+    # Subtest: unsupported runner and traversal paths are refused
+    ok 17 - unsupported runner and traversal paths are refused
+      ---
+      duration_ms: 5.6787
+      type: 'test'
+      ...
+    1..17
+ok 1 - Reusable onboarding, conflicts and recovery
+  ---
+  duration_ms: 1055.348
+  type: 'test'
+  ...
+1..1
+# tests 18
+# suites 0
+# pass 18
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 1151.7664

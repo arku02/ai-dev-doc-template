@@ -1,0 +1,417 @@
+{
+  "generatedAt": "2026-09-18T02:12:27.539Z",
+  "node": "v24.18.0",
+  "openspec": "1.13.1",
+  "root": "<WORKSPACE>\\examples\\order-lookup",
+  "events": [
+    {
+      "step": "schema-validated",
+      "result": {
+        "name": "integrated",
+        "path": "<WORKSPACE>\\examples\\order-lookup\\openspec\\schemas\\integrated",
+        "valid": true,
+        "issues": []
+      }
+    },
+    {
+      "step": "create-full-change",
+      "result": {
+        "action": "new",
+        "id": "add-order-lookup",
+        "output": "{\n  \"change\": {\n    \"id\": \"add-order-lookup\",\n    \"path\": \"<WORKSPACE>\\\\examples\\\\order-lookup\\\\openspec\\\\changes\\\\add-order-lookup\",\n    \"metadataPath\": \"<WORKSPACE>\\\\examples\\\\order-lookup\\\\openspec\\\\changes\\\\add-order-lookup\\\\.openspec.yaml\",\n    \"schema\": \"integrated\"\n  },\n  \"root\": {\n    \"path\": \"<WORKSPACE>\\\\examples\\\\order-lookup\",\n    \"source\": \"nearest\"\n  }\n}\n"
+      }
+    },
+    {
+      "step": "initial-artifact-status",
+      "result": {
+        "changeName": "add-order-lookup",
+        "schemaName": "integrated",
+        "planningHome": {
+          "kind": "repo",
+          "root": "<WORKSPACE>\\examples\\order-lookup",
+          "changesDir": "<WORKSPACE>\\examples\\order-lookup\\openspec\\changes",
+          "defaultSchema": "spec-driven"
+        },
+        "changeRoot": "<WORKSPACE>\\examples\\order-lookup\\openspec\\changes\\add-order-lookup",
+        "artifactPaths": {
+          "proposal": {
+            "outputPath": "proposal.md",
+            "resolvedOutputPath": "<WORKSPACE>\\examples\\order-lookup\\openspec\\changes\\add-order-lookup\\proposal.md",
+            "existingOutputPaths": []
+          },
+          "specs": {
+            "outputPath": "specs/**/*.md",
+            "resolvedOutputPath": "<WORKSPACE>\\examples\\order-lookup\\openspec\\changes\\add-order-lookup\\specs\\**\\*.md",
+            "existingOutputPaths": []
+          },
+          "design": {
+            "outputPath": "design.md",
+            "resolvedOutputPath": "<WORKSPACE>\\examples\\order-lookup\\openspec\\changes\\add-order-lookup\\design.md",
+            "existingOutputPaths": []
+          },
+          "tasks": {
+            "outputPath": "tasks.md",
+            "resolvedOutputPath": "<WORKSPACE>\\examples\\order-lookup\\openspec\\changes\\add-order-lookup\\tasks.md",
+            "existingOutputPaths": []
+          },
+          "review": {
+            "outputPath": "review.md",
+            "resolvedOutputPath": "<WORKSPACE>\\examples\\order-lookup\\openspec\\changes\\add-order-lookup\\review.md",
+            "existingOutputPaths": []
+          }
+        },
+        "isPlanningComplete": false,
+        "isComplete": false,
+        "applyRequires": [
+          "tasks",
+          "review"
+        ],
+        "nextSteps": [
+          "Run openspec instructions proposal --change \"add-order-lookup\" --json before writing that artifact."
+        ],
+        "actionContext": {
+          "mode": "repo-local",
+          "sourceOfTruth": "repo",
+          "planningArtifacts": [
+            "proposal",
+            "specs",
+            "design",
+            "tasks",
+            "review"
+          ],
+          "linkedContext": [],
+          "allowedEditRoots": [
+            "<WORKSPACE>\\examples\\order-lookup"
+          ],
+          "requiresAffectedAreaSelection": false,
+          "constraints": [
+            "Repo-local change artifacts and implementation edits are scoped to this project."
+          ]
+        },
+        "artifacts": [
+          {
+            "id": "proposal",
+            "outputPath": "proposal.md",
+            "status": "ready",
+            "requires": []
+          },
+          {
+            "id": "specs",
+            "outputPath": "specs/**/*.md",
+            "status": "blocked",
+            "requires": [
+              "proposal"
+            ],
+            "missingDeps": [
+              "proposal"
+            ]
+          },
+          {
+            "id": "design",
+            "outputPath": "design.md",
+            "status": "blocked",
+            "requires": [
+              "proposal"
+            ],
+            "missingDeps": [
+              "proposal"
+            ]
+          },
+          {
+            "id": "tasks",
+            "outputPath": "tasks.md",
+            "status": "blocked",
+            "requires": [
+              "specs",
+              "design"
+            ],
+            "missingDeps": [
+              "specs",
+              "design"
+            ]
+          },
+          {
+            "id": "review",
+            "outputPath": "review.md",
+            "status": "blocked",
+            "requires": [
+              "specs",
+              "design",
+              "tasks"
+            ],
+            "missingDeps": [
+              "specs",
+              "design",
+              "tasks"
+            ]
+          }
+        ],
+        "root": {
+          "path": "<WORKSPACE>\\examples\\order-lookup",
+          "source": "nearest"
+        }
+      }
+    },
+    {
+      "step": "custom-proposal-instructions",
+      "result": {
+        "changeName": "add-order-lookup",
+        "artifactId": "proposal",
+        "schemaName": "integrated",
+        "changeDir": "<WORKSPACE>\\examples\\order-lookup\\openspec\\changes\\add-order-lookup",
+        "planningHome": {
+          "kind": "repo",
+          "root": "<WORKSPACE>\\examples\\order-lookup",
+          "changesDir": "<WORKSPACE>\\examples\\order-lookup\\openspec\\changes",
+          "defaultSchema": "spec-driven"
+        },
+        "outputPath": "proposal.md",
+        "resolvedOutputPath": "<WORKSPACE>\\examples\\order-lookup\\openspec\\changes\\add-order-lookup\\proposal.md",
+        "existingOutputPaths": [],
+        "description": "Product intent, scope, non-goals and source references",
+        "instruction": "Use the local template. Apply BMAD-inspired problem and scope analysis.\nLabel assumptions. A small change may reference an existing PRD.\n",
+        "context": "Follow the local workflow guide. Distinguish verified facts, assumptions, and proposals.\nUse one tasks.md per change. Never claim tests passed without running them.\nBMAD and Spec Kit methods are adapted here; their native workflows are not installed.",
+        "template": "# 變更提案\n\n## Why\n<問題、使用者與成功標準；區分事實和假設>\n\n## What Changes\n<本次範圍與產品來源；full 或 lite 的選擇理由>\n\n## Non-goals\n<明確不做的事項>\n\n## Capabilities\n### New Capabilities\n- <capability>: <新增的可觀察行為>\n### Modified Capabilities\n- <existing-capability>: <引用現行規格與修改範圍；無則填無>\n\n## Impact\n<影響的模組、契約、資料與風險；不得假造現況>\n\n",
+        "dependencies": [],
+        "unlocks": [
+          "specs",
+          "design"
+        ],
+        "root": {
+          "path": "<WORKSPACE>\\examples\\order-lookup",
+          "source": "nearest"
+        }
+      }
+    },
+    {
+      "step": "pre-implementation-check",
+      "result": {
+        "action": "check",
+        "id": "add-order-lookup",
+        "mode": "full",
+        "tasks": 4,
+        "requirements": 4,
+        "requiredTestIds": [
+          "R1",
+          "R2",
+          "R3",
+          "R4"
+        ]
+      }
+    },
+    {
+      "step": "verify-full-change",
+      "result": {
+        "change": "add-order-lookup",
+        "passed": true,
+        "finishedAt": "2026-09-18T02:12:21.142Z",
+        "node": "v24.18.0",
+        "openspec": "1.13.1",
+        "command": [
+          "C:\\Program Files\\nodejs\\node.exe",
+          "--test",
+          "--test-reporter=tap",
+          "test/order.test.mjs"
+        ],
+        "exitCode": 0,
+        "error": null,
+        "tests": 10,
+        "executedIds": [
+          "R1",
+          "R2",
+          "R3",
+          "R4"
+        ],
+        "summary": {
+          "mode": "full",
+          "tasks": 4,
+          "requirements": 4,
+          "requiredTestIds": [
+            "R1",
+            "R2",
+            "R3",
+            "R4"
+          ]
+        },
+        "digest": "491eec7f55b691fadb733e7528f97ba298917de7cc2bb9aa75735ef33c97f070",
+        "manifest": {
+          ".gitignore": "99b9ee5792e395f2c7a29ea72e9eab44f469630672361ad336abc61eadb018f9",
+          "CHANGELOG.md": "242f3f11414885cc1e10a336ac537a8bc3fdf05f2778c7a5054baf39e7703d20",
+          "PROJECT-RULES.md": "0682d51d886792b4d9a9d892c1fdd93f4b349b879b5e0dfda17ebd7b7d35e730",
+          "README.md": "98301818468f697db4fe7905013a92ea3f4718d7b8fd99cefde53cdbc2b80baa",
+          "docs/ARCHITECTURE.md": "13f4c6d969ec6b40aa158553b955d29f9d7c3e1cc0a17cbd3eee0aaaea078e6a",
+          "docs/adr/0001-local-fixtures.md": "2e8a4b7ce3ccdfa10444801b1c859ff8f3e8894214c9194fa83d437955e38d8e",
+          "openspec/changes/add-order-lookup/.openspec.yaml": "1154f6e776feec13f518f3295fe804558c906b35f23b1aa6e2cb31cbb31f4901",
+          "openspec/changes/add-order-lookup/design.md": "0eeedb67bd650b8e8daba7be98fcf68b73a4dfa4622780bbbc70578bb3bf4000",
+          "openspec/changes/add-order-lookup/proposal.md": "8cac11823889ff58a3f1a1b75e6598403c577c3996250f526fddc93183dceddc",
+          "openspec/changes/add-order-lookup/review.md": "3121150c57d1bbf6b0823e5f3288cb53e279e73efaaa8463cba1de4e4c204c9b",
+          "openspec/changes/add-order-lookup/specs/order-lookup/spec.md": "7b14b0c0da7f34b84abb23f8fc0e5350ed4b7bb8d7f86e2cd556ab48e8df6509",
+          "openspec/changes/add-order-lookup/tasks.md": "6b32ef1d432656e33ecf33da4d52a163ffdda44f378ab248cb547962e5695eae",
+          "openspec/config.yaml": "905c5324771f623bfe97771c7bf0e58a0d2a4bc920297cf593a72fd1407868d5",
+          "openspec/schemas/integrated/schema.yaml": "632d52d9766f4fed074bb9571e6e38d2188ab5825a7fae33ee3714910fc472d4",
+          "openspec/schemas/integrated/templates/design.md": "6dcda53d518dcdb7ceeb221d9351f5e6001d02046c51521e1c8c9341ceae3ad9",
+          "openspec/schemas/integrated/templates/proposal.md": "35f4b07b219b0ab63c32d2e54314a7b5d649c3aa306ed07c85bc5f998bc01335",
+          "openspec/schemas/integrated/templates/review.md": "ed2af5507baf179126bd4803fe59f50b7f9a4bc84bd8021dc60d3536fd332a45",
+          "openspec/schemas/integrated/templates/spec.md": "16b378f5b439b762bcb1fa3279f3082478033f4251ae6f300597d60ed2e9b63f",
+          "openspec/schemas/integrated/templates/tasks.md": "c350d4972b0ac7741b385f8f4d7b6cb15c8bc9da204e9d552427f5f65573841f",
+          "openspec/specs/.gitkeep": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "package-lock.json": "e1f31f1640b694078f33af66c49035ef357f4e64d3e9fb9718c3e1df9420c1f4",
+          "package.json": "657a27177a94b13b48a9b6e145a2a27a99f6dd813af34823b4a924e9a17bb32f",
+          "scripts/workflow.mjs": "0791941f1dea796d493718197ccc3dc52e4f49485ac90f5084f46a7a2807c289",
+          "src/orders.mjs": "e1426a2d4120123877f20910c1614afcb86656d70deb9c9c9867498f87eafe82",
+          "test/order.test.mjs": "df40ef20e3fd11e661b2ba1ea3a3e12e14e0cf7e9e323be7e125ba40265a651b",
+          "workflow.config.json": "fbe307970d0e6c130dc2b6940c7de42e68a3c3861e314ff4675267ce20eb65c5"
+        },
+        "log": ".workflow/evidence/add-order-lookup.tap",
+        "logHash": "badad2a5549063c1b2ade29849a1b0e386ef1736c1379c08dd3ee286491b20c0"
+      }
+    },
+    {
+      "step": "archive-full-change",
+      "result": {
+        "change": "add-order-lookup",
+        "archivedAt": "2026-09-18T02:12:23.131Z",
+        "archive": "openspec/changes/archive/2026-09-18-add-order-lookup",
+        "verifiedDigest": "491eec7f55b691fadb733e7528f97ba298917de7cc2bb9aa75735ef33c97f070",
+        "specs": {
+          "openspec/specs/.gitkeep": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "openspec/specs/order-lookup/spec.md": "6329ac875b3d8a204757ec7cdd43974fddf53904dc33c8a8b51c66046d62d375"
+        },
+        "output": "{\n  \"archive\": {\n    \"change\": \"add-order-lookup\",\n    \"archivedAs\": \"2026-09-18-add-order-lookup\",\n    \"path\": \"<WORKSPACE>\\\\examples\\\\order-lookup\\\\openspec\\\\changes\\\\archive\\\\2026-09-18-add-order-lookup\",\n    \"specsUpdated\": true,\n    \"totals\": {\n      \"added\": 4,\n      \"modified\": 0,\n      \"removed\": 0,\n      \"renamed\": 0\n    }\n  },\n  \"root\": {\n    \"path\": \"<WORKSPACE>\\\\examples\\\\order-lookup\",\n    \"source\": \"nearest\"\n  }\n}\n"
+      }
+    },
+    {
+      "step": "create-lite-change",
+      "result": {
+        "action": "new",
+        "id": "clarify-shipment-label",
+        "output": "{\n  \"change\": {\n    \"id\": \"clarify-shipment-label\",\n    \"path\": \"<WORKSPACE>\\\\examples\\\\order-lookup\\\\openspec\\\\changes\\\\clarify-shipment-label\",\n    \"metadataPath\": \"<WORKSPACE>\\\\examples\\\\order-lookup\\\\openspec\\\\changes\\\\clarify-shipment-label\\\\.openspec.yaml\",\n    \"schema\": \"integrated\"\n  },\n  \"root\": {\n    \"path\": \"<WORKSPACE>\\\\examples\\\\order-lookup\",\n    \"source\": \"nearest\"\n  }\n}\n"
+      }
+    },
+    {
+      "step": "pre-implementation-lite-check",
+      "result": {
+        "action": "check",
+        "id": "clarify-shipment-label",
+        "mode": "lite",
+        "tasks": 1,
+        "requirements": 1,
+        "requiredTestIds": [
+          "R4"
+        ]
+      }
+    },
+    {
+      "step": "verify-lite-change",
+      "result": {
+        "change": "clarify-shipment-label",
+        "passed": true,
+        "finishedAt": "2026-09-18T02:12:25.120Z",
+        "node": "v24.18.0",
+        "openspec": "1.13.1",
+        "command": [
+          "C:\\Program Files\\nodejs\\node.exe",
+          "--test",
+          "--test-reporter=tap",
+          "test/order.test.mjs"
+        ],
+        "exitCode": 0,
+        "error": null,
+        "tests": 10,
+        "executedIds": [
+          "R1",
+          "R2",
+          "R3",
+          "R4"
+        ],
+        "summary": {
+          "mode": "lite",
+          "tasks": 1,
+          "requirements": 1,
+          "requiredTestIds": [
+            "R4"
+          ]
+        },
+        "digest": "9b39414ed53a8268dd0404fdbb99cda0c521653f2187e7858b5a2bdc262d513b",
+        "manifest": {
+          ".gitignore": "99b9ee5792e395f2c7a29ea72e9eab44f469630672361ad336abc61eadb018f9",
+          "CHANGELOG.md": "96ec4baf429a0f76f6386b47cb1450df4295c2cb3104d68738061aa79ea1e6d5",
+          "PROJECT-RULES.md": "0682d51d886792b4d9a9d892c1fdd93f4b349b879b5e0dfda17ebd7b7d35e730",
+          "README.md": "98301818468f697db4fe7905013a92ea3f4718d7b8fd99cefde53cdbc2b80baa",
+          "docs/ARCHITECTURE.md": "13f4c6d969ec6b40aa158553b955d29f9d7c3e1cc0a17cbd3eee0aaaea078e6a",
+          "docs/adr/0001-local-fixtures.md": "2e8a4b7ce3ccdfa10444801b1c859ff8f3e8894214c9194fa83d437955e38d8e",
+          "openspec/changes/clarify-shipment-label/.openspec.yaml": "1154f6e776feec13f518f3295fe804558c906b35f23b1aa6e2cb31cbb31f4901",
+          "openspec/changes/clarify-shipment-label/design.md": "368eff9708aaabc2ba41aa05ff971645651e11f9bc5372765feaa01b09b04859",
+          "openspec/changes/clarify-shipment-label/proposal.md": "a99aa8a0fe03a47eb2b18f689fb37b120f63804c5c395fe50f466addcb509bd6",
+          "openspec/changes/clarify-shipment-label/review.md": "eacf5f43746bcc11e6fe9963feb88f7c885681553711ce840a1f82f0267dfb3e",
+          "openspec/changes/clarify-shipment-label/specs/order-lookup/spec.md": "291f4f1688d491cb15e37969c6c1757d7120c70c35856a8801b3d8b8863a1cbd",
+          "openspec/changes/clarify-shipment-label/tasks.md": "1c02a8bcb52df1d9d092a222ea8ae7109733fe014733ed63a6b7e620030c40f5",
+          "openspec/config.yaml": "905c5324771f623bfe97771c7bf0e58a0d2a4bc920297cf593a72fd1407868d5",
+          "openspec/schemas/integrated/schema.yaml": "632d52d9766f4fed074bb9571e6e38d2188ab5825a7fae33ee3714910fc472d4",
+          "openspec/schemas/integrated/templates/design.md": "6dcda53d518dcdb7ceeb221d9351f5e6001d02046c51521e1c8c9341ceae3ad9",
+          "openspec/schemas/integrated/templates/proposal.md": "35f4b07b219b0ab63c32d2e54314a7b5d649c3aa306ed07c85bc5f998bc01335",
+          "openspec/schemas/integrated/templates/review.md": "ed2af5507baf179126bd4803fe59f50b7f9a4bc84bd8021dc60d3536fd332a45",
+          "openspec/schemas/integrated/templates/spec.md": "16b378f5b439b762bcb1fa3279f3082478033f4251ae6f300597d60ed2e9b63f",
+          "openspec/schemas/integrated/templates/tasks.md": "c350d4972b0ac7741b385f8f4d7b6cb15c8bc9da204e9d552427f5f65573841f",
+          "openspec/specs/.gitkeep": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "openspec/specs/order-lookup/spec.md": "6329ac875b3d8a204757ec7cdd43974fddf53904dc33c8a8b51c66046d62d375",
+          "package-lock.json": "e1f31f1640b694078f33af66c49035ef357f4e64d3e9fb9718c3e1df9420c1f4",
+          "package.json": "657a27177a94b13b48a9b6e145a2a27a99f6dd813af34823b4a924e9a17bb32f",
+          "scripts/workflow.mjs": "0791941f1dea796d493718197ccc3dc52e4f49485ac90f5084f46a7a2807c289",
+          "src/orders.mjs": "bdfc3034cd10e59c0c487660ce68ecc7af69f60ac0d51a4787970bbddfd4fa48",
+          "test/order.test.mjs": "5fb71a651a08518c45452080d8f977e5312651d98d20111f5f5cf24d7827db7c",
+          "workflow.config.json": "fbe307970d0e6c130dc2b6940c7de42e68a3c3861e314ff4675267ce20eb65c5"
+        },
+        "log": ".workflow/evidence/clarify-shipment-label.tap",
+        "logHash": "1ca1086f2d7aca056b0022d2770bb39ec61a1e289274e1778697075b74fd47ab"
+      }
+    },
+    {
+      "step": "archive-lite-change",
+      "result": {
+        "change": "clarify-shipment-label",
+        "archivedAt": "2026-09-18T02:12:27.169Z",
+        "archive": "openspec/changes/archive/2026-09-18-clarify-shipment-label",
+        "verifiedDigest": "9b39414ed53a8268dd0404fdbb99cda0c521653f2187e7858b5a2bdc262d513b",
+        "specs": {
+          "openspec/specs/.gitkeep": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "openspec/specs/order-lookup/spec.md": "5062530dfbb3231a6a282f0d6e077f37674ae1f8cd7b86faa4f9f2d3ac821f5e"
+        },
+        "output": "{\n  \"archive\": {\n    \"change\": \"clarify-shipment-label\",\n    \"archivedAs\": \"2026-09-18-clarify-shipment-label\",\n    \"path\": \"<WORKSPACE>\\\\examples\\\\order-lookup\\\\openspec\\\\changes\\\\archive\\\\2026-09-18-clarify-shipment-label\",\n    \"specsUpdated\": true,\n    \"totals\": {\n      \"added\": 0,\n      \"modified\": 1,\n      \"removed\": 0,\n      \"renamed\": 0\n    }\n  },\n  \"root\": {\n    \"path\": \"<WORKSPACE>\\\\examples\\\\order-lookup\",\n    \"source\": \"nearest\"\n  }\n}\n"
+      }
+    },
+    {
+      "step": "validate-final-specs",
+      "result": {
+        "items": [
+          {
+            "id": "order-lookup",
+            "type": "spec",
+            "valid": true,
+            "issues": [],
+            "durationMs": 6
+          }
+        ],
+        "summary": {
+          "totals": {
+            "items": 1,
+            "passed": 1,
+            "failed": 0
+          },
+          "byType": {
+            "spec": {
+              "items": 1,
+              "passed": 1,
+              "failed": 0
+            }
+          }
+        },
+        "version": "1.0",
+        "root": {
+          "path": "<WORKSPACE>\\examples\\order-lookup",
+          "source": "nearest"
+        }
+      }
+    }
+  ]
+}

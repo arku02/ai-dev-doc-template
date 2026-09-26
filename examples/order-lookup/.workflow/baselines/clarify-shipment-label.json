@@ -1,0 +1,8 @@
+{
+  "change": "clarify-shipment-label",
+  "capturedAt": "2026-09-18T02:12:23.498Z",
+  "specs": {
+    "openspec/specs/.gitkeep": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "openspec/specs/order-lookup/spec.md": "6329ac875b3d8a204757ec7cdd43974fddf53904dc33c8a8b51c66046d62d375"
+  }
+}

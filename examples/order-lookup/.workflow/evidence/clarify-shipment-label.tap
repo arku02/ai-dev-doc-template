@@ -1,0 +1,70 @@
+TAP version 13
+# Subtest: R1: unauthenticated caller receives 401
+ok 1 - R1: unauthenticated caller receives 401
+  ---
+  duration_ms: 1.532
+  type: 'test'
+  ...
+# Subtest: R1: customer can retrieve own order without internal fields
+ok 2 - R1: customer can retrieve own order without internal fields
+  ---
+  duration_ms: 0.8338
+  type: 'test'
+  ...
+# Subtest: R1: other customer and missing order have identical responses
+ok 3 - R1: other customer and missing order have identical responses
+  ---
+  duration_ms: 0.8462
+  type: 'test'
+  ...
+# Subtest: R2: returns shipment status and original synchronization time
+ok 4 - R2: returns shipment status and original synchronization time
+  ---
+  duration_ms: 0.1672
+  type: 'test'
+  ...
+# Subtest: R2: absent shipment has null status and a preparing message
+ok 5 - R2: absent shipment has null status and a preparing message
+  ---
+  duration_ms: 0.268
+  type: 'test'
+  ...
+# Subtest: R3: exactly 60 minutes is not stale
+ok 6 - R3: exactly 60 minutes is not stale
+  ---
+  duration_ms: 0.104
+  type: 'test'
+  ...
+# Subtest: R3: over 60 minutes is stale and shows a warning
+ok 7 - R3: over 60 minutes is stale and shows a warning
+  ---
+  duration_ms: 0.2148
+  type: 'test'
+  ...
+# Subtest: R3: fresh data has no stale warning
+ok 8 - R3: fresh data has no stale warning
+  ---
+  duration_ms: 0.119
+  type: 'test'
+  ...
+# Subtest: R4: HTML displays the agreed label and timestamp
+ok 9 - R4: HTML displays the agreed label and timestamp
+  ---
+  duration_ms: 0.1703
+  type: 'test'
+  ...
+# Subtest: R4: rendered shipment data is escaped
+ok 10 - R4: rendered shipment data is escaped
+  ---
+  duration_ms: 0.2779
+  type: 'test'
+  ...
+1..10
+# tests 10
+# suites 0
+# pass 10
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 79.8159

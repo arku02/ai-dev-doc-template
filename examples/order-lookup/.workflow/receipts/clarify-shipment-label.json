@@ -1,0 +1,11 @@
+{
+  "change": "clarify-shipment-label",
+  "archivedAt": "2026-09-18T02:12:27.169Z",
+  "archive": "openspec/changes/archive/2026-09-18-clarify-shipment-label",
+  "verifiedDigest": "9b39414ed53a8268dd0404fdbb99cda0c521653f2187e7858b5a2bdc262d513b",
+  "specs": {
+    "openspec/specs/.gitkeep": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "openspec/specs/order-lookup/spec.md": "5062530dfbb3231a6a282f0d6e077f37674ae1f8cd7b86faa4f9f2d3ac821f5e"
+  },
+  "output": "{\n  \"archive\": {\n    \"change\": \"clarify-shipment-label\",\n    \"archivedAs\": \"2026-09-18-clarify-shipment-label\",\n    \"path\": \"<WORKSPACE>\\\\examples\\\\order-lookup\\\\openspec\\\\changes\\\\archive\\\\2026-09-18-clarify-shipment-label\",\n    \"specsUpdated\": true,\n    \"totals\": {\n      \"added\": 0,\n      \"modified\": 1,\n      \"removed\": 0,\n      \"renamed\": 0\n    }\n  },\n  \"root\": {\n    \"path\": \"<WORKSPACE>\\\\examples\\\\order-lookup\",\n    \"source\": \"nearest\"\n  }\n}\n"
+}
