@@ -1,0 +1,32 @@
+[
+  {
+    "file": "docs/reports/clean-environment.json",
+    "sha256": "1dcedee7d1809e813aceb95d8e19da591e024c50c1cc9f41148b0355bbd465ff",
+    "reason": "已逐欄核對：僅含 Windows 共用 Node/npm 安裝位置；個人路徑已使用通用標記。此精確例外保留歷史公開副本，不適用任何修改後的內容。"
+  },
+  {
+    "file": "docs/reports/onboarding-tests.json",
+    "sha256": "5c08320706fd6061ef8b016fb3f8eaf267848f7ae71aec90997c8ebf78c850a6",
+    "reason": "已逐欄核對：僅含 Windows 共用 Node/npm 安裝位置；個人路徑已使用通用標記。此精確例外保留歷史公開副本，不適用任何修改後的內容。"
+  },
+  {
+    "file": "docs/reports/python-tests.json",
+    "sha256": "a8d6141c9f8aaacfa9c5872c48f59f2cfc5caf6010a2a55627e5fa3025dc26ab",
+    "reason": "已逐欄核對：僅含 Windows 共用 Node/npm 安裝位置；個人路徑已使用通用標記。此精確例外保留歷史公開副本，不適用任何修改後的內容。"
+  },
+  {
+    "file": "examples/order-lookup/.workflow/evidence/add-order-lookup.json",
+    "sha256": "79a3fdcf2d0cf54f5a553cca275a52969a65ee5f2e95ea2ab9aac47713ce7af0",
+    "reason": "已逐欄核對：僅含 Windows 共用 Node/npm 安裝位置；個人路徑已使用通用標記。此精確例外保留歷史公開副本，不適用任何修改後的內容。"
+  },
+  {
+    "file": "examples/order-lookup/.workflow/evidence/clarify-shipment-label.json",
+    "sha256": "5a389b7e7ed5fa280cb14f81f135d9563a61491ee6c9cd0a772a36a8b716f11d",
+    "reason": "已逐欄核對：僅含 Windows 共用 Node/npm 安裝位置；個人路徑已使用通用標記。此精確例外保留歷史公開副本，不適用任何修改後的內容。"
+  },
+  {
+    "file": "examples/order-lookup/.workflow/replay.json",
+    "sha256": "8411d6562b96821634ba6974a22d10f78a80dee18f051c08f2ef0e9e46aa715d",
+    "reason": "已逐欄核對：僅含 Windows 共用 Node/npm 安裝位置；個人路徑已使用通用標記。此精確例外保留歷史公開副本，不適用任何修改後的內容。"
+  }
+]

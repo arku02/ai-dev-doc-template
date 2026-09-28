@@ -3,6 +3,7 @@ import path from 'node:path';
 import {spawnSync} from 'node:child_process';
 import {pathToFileURL} from 'node:url';
 import {cliLocation, readWorkflowConfig, pythonCommand} from './workflow.mjs';
+import {localSettings, publicValue, redact} from './privacy.mjs';
 
 export function doctor(root) {
   root = fs.realpathSync(root);
@@ -31,6 +32,6 @@ export function doctor(root) {
   return result;
 }
 if(process.argv[1] && import.meta.url===pathToFileURL(path.resolve(process.argv[1])).href) {
-  try {const result=doctor(process.cwd());console.log(JSON.stringify(result,null,2));process.exitCode=result.ready?0:1;}
-  catch(e){console.error(e.message);process.exitCode=1;}
+  try {const result=doctor(process.cwd());console.log(JSON.stringify(publicValue(result,process.cwd(),localSettings(process.cwd()).privateRoots??[]),null,2));process.exitCode=result.ready?0:1;}
+  catch(e){console.error(redact(e.message,process.cwd()));process.exitCode=1;}
 }

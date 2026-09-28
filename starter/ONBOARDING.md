@@ -36,3 +36,18 @@ new 後依 openspec/schemas/integrated/templates 寫 proposal、specs、design�
 - 導入後尚未開始工作，可用樣板庫 onboard rollback 指令和 .workflow/imports/<id>/manifest.json 復原。已修改工具檔或開始變更時會拒絕自動復原，避免刪掉新工作。
 
 這是本地檢查，原生 OpenSpec archive 可以繞過。團隊強制約束需在受保護 CI 另行配置。工具不保證需求正確、測試語意充分或外部服務可用。
+
+## 公開與隱私
+
+封存保護歷史事實與結果，允許有紀錄的隱私去識別化，詳見 [專案規則](PROJECT-RULES.md) 的「歷史證據與隱私」。新日誌先去識別化再計算雜湊，doctor 的命令列輸出與新封存回條也會處理路徑。本機原始日誌與 `.workflow/imports/` 的 manifest／備份不公開。導入 manifest 不應修改路徑或雜湊後繼續作為 rollback 輸入。
+
+公開副本須註明處理範圍與雜湊驗證限制；活動變更受影響時重新 verify，封存副本不得手改通過欄位或雜湊來冒充原始證據。`.gitignore` 不會移除已追蹤檔案或舊提交中的資訊，公開前也須檢查準備推送的歷史。
+
+Git 倉庫建立後，在專案根目錄執行以下一次性啟用與歷史檢查；每個 clone 都需要啟用：
+
+```text
+node .integration/scripts/privacy.mjs install
+node .integration/scripts/privacy.mjs history
+```
+
+之後正常提交與推送會先在本機檢查；發現私人路徑或無法檢查時阻擋，並保留原檔。既有 hooks 不會被覆蓋。檢查可被繞過，網站直接上傳也不在保護範圍；這不是零洩漏保證。可執行設定、本機覆寫與圖片等非文字檔案的審查方式見 [路徑隱私保護](PRIVACY.md)。

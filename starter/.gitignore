@@ -1,3 +1,13 @@
 node_modules/
 .workflow/lock
-
+.workflow/private/
+.workflow/imports/
+.workflow/python-*.json
+workflow.local.json
+.env
+.env.*
+!.env.example
+config.ini
+.venv/
+venv/
+__pycache__/

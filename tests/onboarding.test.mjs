@@ -36,6 +36,19 @@ test('Reusable onboarding, conflicts and recovery',async t=>{
     assert.ok(after['.gitignore'].startsWith(before['.gitignore']));
     assert.equal(fs.readFileSync(path.join(path.dirname(result.manifest),'backup/.gitignore'),'utf8'),before['.gitignore']);
   });
+  await t.test('privacy tools, local exclusions and byte-preserving attributes survive onboarding and rollback',()=>{
+    const root=existing(),original='*.txt text eol=crlf\r\n';
+    fs.writeFileSync(path.join(root,'.gitattributes'),original);
+    const r=applyOnboarding(planOnboarding(root,options));
+    assert.ok(fs.existsSync(path.join(root,'.integration/scripts/privacy.mjs')));
+    assert.ok(fs.existsSync(path.join(root,'.integration/PRIVACY.md')));
+    const ignore=fs.readFileSync(path.join(root,'.gitignore'),'utf8');
+    for(const name of ['.workflow/private/','.workflow/imports/','workflow.local.json'])assert.ok(ignore.includes(name));
+    const attributes=fs.readFileSync(path.join(root,'.gitattributes'),'utf8');
+    assert.ok(attributes.startsWith(original));assert.ok(attributes.includes('.workflow/evidence/** -text'));
+    rollbackOnboarding(r.manifest);
+    assert.equal(fs.readFileSync(path.join(root,'.gitattributes'),'utf8'),original);
+  });
   for(const name of ['openspec','.integration','workflow.config.json'])await t.test('collision '+name+' is refused without edits',()=>{
     const root=existing();fs.writeFileSync(path.join(root,name),'existing');const before=snapshot(root);
     assert.throws(()=>planOnboarding(root,options),/Conflict/);assert.deepEqual(snapshot(root),before);

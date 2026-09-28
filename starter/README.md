@@ -18,6 +18,8 @@
 
 填好設定與測試檔後可執行 `npm run doctor` 檢查環境；doctor 不代表測試已通過。
 
+Git 倉庫建立後，執行 `npm run privacy:install` 啟用本機提交／推送前攔截，再執行 `npm run privacy:history` 檢查既有歷史。每個 clone 都要啟用一次；複製模板不會自動安裝 hooks。操作、本機 Python 設定及精確審查例外見 [路徑隱私保護](PRIVACY.md)。
+
 ## 日常操作
 
 ```text
@@ -42,7 +44,7 @@ npm run workflow -- archive add-feature
 - `.workflow/receipts/`：成功同步／封存的回條。
 - `openspec/changes/archive/`：歷史變更；不回頭修改它來做新工作。
 
-證據、基準與回條建議納入版控；lock 不納入。輸入雜湊涵蓋專案檔案、目前變更和現行規格，排除 node_modules、.git、.workflow、.npm-cache、.venv／venv／env、Python 快取、根目錄 config.ini／.env，以及其他活動／封存變更。依賴與機密設定不包含於內容快照；若測試依賴真實設定或服務，需另外建立驗證機制。
+證據、基準與回條經隱私檢查後可納入版控；lock 不納入。新驗證日誌先去識別化再計算雜湊，原始日誌留在本機 `.workflow/private/`；新封存回條及命令列公開輸出也處理路徑。工具不會回頭改寫舊證據；歷史資料依 [專案規則](PROJECT-RULES.md) 的「歷史證據與隱私」處理。手動修改過的歷史副本須標明修改範圍與原雜湊限制，不能冒充原始證據。輸入雜湊涵蓋專案檔案、目前變更和現行規格，排除 node_modules、.git、.workflow、.npm-cache、.venv／venv／env、Python 快取、根目錄 config.ini／.env／workflow.local.json，以及其他活動／封存變更；有效執行設定另計入新鮮度雜湊，不公開私人路徑。若測試依賴真實設定或服務，需另外建立驗證機制。
 
 ## Python 專案
 

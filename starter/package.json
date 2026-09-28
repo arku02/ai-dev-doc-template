@@ -9,7 +9,10 @@
   "scripts": {
     "workflow": "node scripts/workflow.mjs",
     "doctor": "node scripts/doctor.mjs",
-    "test": "node scripts/run-tests.mjs"
+    "test": "node scripts/run-tests.mjs",
+    "privacy:install": "node scripts/privacy.mjs install",
+    "privacy:check": "node scripts/privacy.mjs staged",
+    "privacy:history": "node scripts/privacy.mjs history"
   },
   "devDependencies": {
     "@fission-ai/openspec": "1.13.1"

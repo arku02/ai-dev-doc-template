@@ -33,13 +33,16 @@ Python 使用對應的 my-python-plan.json。工具重新核對目標與模板�
 
 | 位置 | 用途 |
 |---|---|
-| .integration/ | 獨立 package／lockfile、流程執行器、GUIDE.md 與 PROJECT-RULES.md |
+| .integration/ | 獨立 package／lockfile、流程執行器、GUIDE.md、PRIVACY.md 與 PROJECT-RULES.md |
 | openspec/ | 自訂 schema、模板與之後的規格／變更 |
 | workflow.config.json | 測試方式、Python 執行檔與測試清單 |
-| .gitignore | 保留原內容並追加工具依賴與鎖檔忽略規則 |
+| .gitignore | 保留原內容並追加工具依賴、鎖檔、本機設定與私人原始資料忽略規則 |
+| .gitattributes | 保留原內容並追加證據位元組保留規則，避免換行轉換破壞雜湊 |
 | .workflow/imports/導入編號/ | manifest、套用狀態及被修改檔案的備份 |
 
 套用不執行產品程式、不安裝套件、不連資料庫、不修改全域 AI 設定。目標位於執行環境允許寫入的工作區之外時，仍可能要求檔案權限；接入工具不會繞過。
+
+plan／manifest 保留實際路徑供套用與復原，屬於本機資料，不上傳。新版 `.gitignore` 排除 `.workflow/imports/` 與 `.workflow/private/`；已被追蹤的檔案仍需人工處理。
 
 ## 3. 安裝與環境檢查
 
@@ -60,6 +63,17 @@ py -3 -m venv .venv
 ```
 
 只有專案真的有 requirements.txt 才執行第二行；純標準函式庫專案不需安裝套件。請將 .venv 加入產品的 .gitignore；工具不推測依賴或自動升級版本。
+
+### 啟用上傳前的本機保護
+
+Git 倉庫建立後，在目標專案根目錄執行：
+
+```text
+node .integration/scripts/privacy.mjs install
+node .integration/scripts/privacy.mjs history
+```
+
+每個 clone 都需啟用。原有 Git hooks 會被保留，遇到衝突需整合；只導入模板不代表已啟用攔截。詳見目標專案 `.integration/PRIVACY.md`；個人 Python 完整路徑可移到不公開的 `workflow.local.json`，共用設定保留可執行的相對路徑或 PATH 命令。
 
 ## 4. 第一個變更
 

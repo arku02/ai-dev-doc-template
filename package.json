@@ -8,6 +8,7 @@
     "test": "node scripts/validate-lab.mjs",
     "test:python": "node scripts/validate-python.mjs",
     "test:onboarding": "node scripts/validate-onboarding.mjs",
+    "test:privacy": "node --test tests/privacy.test.mjs",
     "test:clean": "node scripts/validate-clean.mjs",
     "onboard": "node scripts/onboard.mjs",
     "demo:test": "node --test examples/order-lookup/test/*.test.mjs",

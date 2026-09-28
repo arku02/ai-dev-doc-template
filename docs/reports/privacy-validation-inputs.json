@@ -1,0 +1,22 @@
+{
+  "date": "2026-09-28",
+  "platform": "win32",
+  "node": "v24.18.0",
+  "tests": {
+    "privacy": 10,
+    "onboarding": 19,
+    "workflow": 19,
+    "python": 13
+  },
+  "inputHashes": {
+    "starter/scripts/privacy.mjs": "172857f5b498ad21eca757a8d76577aa0ab9f69f179fc86b5a12750235ca5a73",
+    "starter/scripts/workflow.mjs": "d9b364b18c794207c0eb7ab7ca683a8a2d32ff603b6f27b0794ccfe670ead726",
+    "starter/scripts/doctor.mjs": "663a6ebc0cbd90b2564f47e02b5c9ec576408e48a4251e771d0abde1f0711ad3",
+    "starter/scripts/run-tests.mjs": "453760f1c65181f7f800d6d5c78d7435abd8eb491f7cc1d7c88f42773cd3d88e",
+    "scripts/onboard.mjs": "5b29a613bb0e52e341ebc212848d8d3fdb3e9d10964290a4b465733bf36f8365",
+    "tests/privacy.test.mjs": "7a37d18de4257221695d723c0dfb0e19f3a75a998cf7fcff3720f10ad3396aaf",
+    "tests/onboarding.test.mjs": "11070dd71e9cfc19e3a7ab2cf5133d5c9a18126f42d4752b5db4a672b444d7da",
+    "tests/workflow.test.mjs": "68fc4b8974b7ec9ebae142c39a30eae01eac5f6709f258ca51990e4d8a6e0535",
+    "tests/python-runner.test.mjs": "0ae59f0d32126ef1ba9f7e0b0cf912d0291be77ca288f6a4d78db7935d668339"
+  }
+}

@@ -12,6 +12,9 @@
 - [第二版驗證](docs/reports/RELEASE-0.2-VALIDATION.md)：通用接入、乾淨環境與回歸結果。
 - [試跑報告](docs/reports/INTEGRATION-TRIAL.md)：成功／失敗案例、證據與限制。
 - [整合工作約定](docs/INTEGRATION.md)：文件責任與修改回流。
+- [去識別化與公開](docs/PRIVACY-REDACTION.md)：移除個人路徑、保留歷史事實及處理證據雜湊限制。
+- [開發期間的路徑隱私保護](starter/PRIVACY.md)：新日誌自動處理、本機設定與 Git 提交／推送前攔截的啟用方式。
+- [路徑保護驗證](docs/reports/PRIVACY-VALIDATION.md)：提交、推送攔截與 Node／Python 開發流程的實測範圍。
 - [可複製起始專案](starter/README.md)：工具、模板、規則。
 - [已完成示範](examples/order-lookup/README.md)：真實本地程式、測試、現行規格與封存紀錄。
 - [原版手動流程](docs/WORKFLOW.manual.md)：保留原有 Markdown 做法；同一功能不要同時維護兩套任務。
@@ -24,6 +27,7 @@
 npm ci --ignore-scripts --no-audit --no-fund --cache .npm-cache
 npm test
 npm run test:onboarding
+npm run test:privacy
 npm run test:python
 npm run test:clean -- --python python
 npm run demo:test
@@ -43,6 +47,8 @@ npm run onboard -- apply .sandbox/my-plan.json
 ```
 
 接著在目標根目錄執行 `npm ci --prefix .integration --ignore-scripts --no-audit --no-fund`。工具有自己的套件設定，不改產品 README／package.json。Python、衝突及復原見 [導入手冊](docs/ONBOARDING.md)。
+
+Git 倉庫建立後，再執行 `node .integration/scripts/privacy.mjs install` 與 `node .integration/scripts/privacy.mjs history`。這會啟用本機提交／推送前檢查並檢查舊歷史；每個 clone 都需要啟用。新證據會先去識別化再計算雜湊，執行時仍使用真實路徑。這是路徑保護，不是通用機密掃描或零洩漏保證。
 
 若想用原平面結構建立新專案，仍可：
 

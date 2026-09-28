@@ -46,6 +46,7 @@ function desired(options) {
   data.set('.integration/package-lock.json',fs.readFileSync(path.join(source,'package-lock.json')));
   data.set('.integration/PROJECT-RULES.md',Buffer.from(fs.readFileSync(path.join(source,'PROJECT-RULES.md'),'utf8').replaceAll('npm run workflow --','node .integration/scripts/workflow.mjs')));
   data.set('.integration/GUIDE.md',fs.readFileSync(path.join(source,'ONBOARDING.md')));
+  data.set('.integration/PRIVACY.md',fs.readFileSync(path.join(source,'PRIVACY.md')));
   const config={schema:'integrated',openspecVersion:'1.13.1',testRunner:options.runner,testFiles:options.tests};
   if(options.runner==='python-unittest')config.pythonExecutable=options.python;
   data.set('workflow.config.json',Buffer.from(stringify(config)));
@@ -64,11 +65,15 @@ function build(target,options) {
   const ignore=inside(target,'.gitignore');
   const previous=fs.existsSync(ignore)?fs.readFileSync(ignore):null;
   const eol=previous?.includes(Buffer.from('\r\n'))?'\r\n':'\n';
-  const suffix=['','# Integrated workflow 0.2.0','.integration/node_modules/','.workflow/lock','.workflow/onboarding.lock',''].join(eol);
+  const suffix=['','# Integrated workflow 0.2.0','.integration/node_modules/','.workflow/lock','.workflow/onboarding.lock',
+    '.workflow/private/','.workflow/imports/','.workflow/python-*.json','workflow.local.json','.env','.env.*','!.env.example','config.ini','.venv/','venv/','__pycache__/',''].join(eol);
   data.set('.gitignore',Buffer.concat([previous??Buffer.alloc(0),Buffer.from(suffix)]));
+  const attributes=inside(target,'.gitattributes');
+  const oldAttributes=fs.existsSync(attributes)?fs.readFileSync(attributes):Buffer.alloc(0);
+  data.set('.gitattributes',Buffer.concat([oldAttributes,Buffer.from('\n'+fs.readFileSync(path.join(source,'.gitattributes'),'utf8'))]));
   const operations=[...data].map(([file,content])=>{
     const full=inside(target,file),exists=fs.existsSync(full);
-    if(exists&&file!=='.gitignore')fail('Conflict: '+file);
+    if(exists&&!['.gitignore','.gitattributes'].includes(file))fail('Conflict: '+file);
     return {file,kind:exists?'modify':'add',before:exists?hash(fs.readFileSync(full)):null,after:hash(content)};
   });
   return {body:{format:1,version:'0.2.0',target,existed:fs.existsSync(target),options,operations},data};
