@@ -10,13 +10,14 @@ let number=0;
 function existing() {
   const root=path.join(parent,'existing-'+(++number));fs.mkdirSync(root);
   fs.writeFileSync(path.join(root,'README.md'),'User documentation\n');
+  fs.writeFileSync(path.join(root,'LICENSE'),'Existing product license\n');
   fs.writeFileSync(path.join(root,'package.json'),'{"type":"commonjs","scripts":{"test":"custom"}}\n');
   fs.writeFileSync(path.join(root,'package-lock.json'),'original lock\n');
   fs.writeFileSync(path.join(root,'.gitignore'),'# custom\r\nprivate/\r\n');
   return root;
 }
 function snapshot(root) {
-  return Object.fromEntries(['README.md','package.json','package-lock.json','.gitignore'].map(f=>[f,fs.readFileSync(path.join(root,f),'utf8')]));
+  return Object.fromEntries(['README.md','LICENSE','package.json','package-lock.json','.gitignore'].map(f=>[f,fs.readFileSync(path.join(root,f),'utf8')]));
 }
 test('Reusable onboarding, conflicts and recovery',async t=>{
   await t.test('new project plan does not create the target',()=>{
@@ -25,6 +26,7 @@ test('Reusable onboarding, conflicts and recovery',async t=>{
     const result=applyOnboarding(p);
     assert.ok(fs.existsSync(result.manifest));
     assert.ok(fs.existsSync(path.join(root,'.integration/scripts/workflow.mjs')));
+    assert.equal(fs.readFileSync(path.join(root,'.integration/LICENSE'),'utf8'),fs.readFileSync('LICENSE','utf8'));
     assert.match(fs.readFileSync(path.join(root,'openspec/schemas/integrated/schema.yaml'),'utf8'),/node \.integration\/scripts\/workflow/);
     assert.equal(fs.existsSync(path.join(root,'package.json')),false);
   });
@@ -32,7 +34,7 @@ test('Reusable onboarding, conflicts and recovery',async t=>{
     const root=existing(),before=snapshot(root),p=planOnboarding(root,options);
     assert.deepEqual(snapshot(root),before);
     const result=applyOnboarding(p),after=snapshot(root);
-    for(const f of ['README.md','package.json','package-lock.json'])assert.equal(after[f],before[f]);
+    for(const f of ['README.md','LICENSE','package.json','package-lock.json'])assert.equal(after[f],before[f]);
     assert.ok(after['.gitignore'].startsWith(before['.gitignore']));
     assert.equal(fs.readFileSync(path.join(path.dirname(result.manifest),'backup/.gitignore'),'utf8'),before['.gitignore']);
   });

@@ -2,6 +2,8 @@
 
 本專案採 OpenSpec 1.13.1，模板改編 BMAD 規劃與 Spec Kit 澄清／一致性檢查方法。工具在 .integration，產品程式、原 README、package.json 與 lockfile 保留原位置。
 
+匯入的原創工具、文件與樣板（包括 openspec/ 內的樣板）採用 [MIT License](LICENSE)，Copyright (c) 2026 arku02；接入後此授權檔位於 .integration/LICENSE。散布這些內容時須保留版權與授權聲明。產品本身的授權由你決定，第三方內容沿用各自授權。
+
 所有以下命令都在**專案根目錄**執行。先讀 .integration/PROJECT-RULES.md，讓協作的 AI 也讀取它。未自動安裝全域指令或修改 AI 設定。
 
 ## 安裝與環境檢查

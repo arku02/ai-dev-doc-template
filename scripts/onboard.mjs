@@ -44,6 +44,7 @@ function desired(options) {
   const pkg=json(path.join(source,'package.json'));delete pkg.scripts;
   data.set('.integration/package.json',Buffer.from(stringify(pkg)));
   data.set('.integration/package-lock.json',fs.readFileSync(path.join(source,'package-lock.json')));
+  data.set('.integration/LICENSE',fs.readFileSync(path.join(source,'LICENSE')));
   data.set('.integration/PROJECT-RULES.md',Buffer.from(fs.readFileSync(path.join(source,'PROJECT-RULES.md'),'utf8').replaceAll('npm run workflow --','node .integration/scripts/workflow.mjs')));
   data.set('.integration/GUIDE.md',fs.readFileSync(path.join(source,'ONBOARDING.md')));
   data.set('.integration/PRIVACY.md',fs.readFileSync(path.join(source,'PRIVACY.md')));

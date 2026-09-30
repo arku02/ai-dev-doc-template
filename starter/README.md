@@ -2,6 +2,8 @@
 
 本目錄供全新專案整份複製。既有專案請使用樣板庫 docs/ONBOARDING.md 的通用入口，不把此目錄覆蓋到舊專案。本目錄 ONBOARDING.md 是接入型 .integration/GUIDE.md 的來源，命令與平面佈局不同。
 
+本起始專案的原創工具、文件與樣板採用 [MIT License](LICENSE)，Copyright (c) 2026 arku02；第三方內容沿用各自授權。複製或散布樣板內容時須保留版權與授權聲明。你新增的產品內容可自行選擇授權；若調整根目錄 LICENSE 或 package.json 的授權欄位，仍須另行保留本樣板適用的 MIT 聲明並標明範圍。
+
 這份起始專案採 OpenSpec 1.13.1 管理規格，使用改編的 BMAD 規劃方法與 Spec Kit 審查方法。沒有安裝後兩者的原生工具。
 
 流程工具需要 Node.js 20.19 以上。測試支援 Node 原生測試或 Python unittest；Python 適配器已用 Python 3.13.7 驗證，其他測試框架需另外接入。
